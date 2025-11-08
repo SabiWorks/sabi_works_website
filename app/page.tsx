@@ -52,12 +52,12 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-teal-600 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-300 rounded-full blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-1/4 w-32 h-32 border-l-8 border-purple-400 opacity-30"></div>
+        <div className="absolute top-70 left-0 w-96 h-96 bg-teal-600 rounded-full  -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600 rounded-full  translate-x-1/2 -translate-y-1/2"></div>
+        {/* <div className="absolute bottom-0 left-1/4 w-32 h-32 border-l-8 border-purple-400 opacity-30"></div> */}
 
         {/* IKEA Logo */}
-        <div className="absolute left-12 top-20 p-3 border-2 border-gray-900 bg-white">
+        {/* <div className="absolute left-12 top-20 p-3 border-2 border-gray-900 bg-white">
           <div className="text-xs font-bold text-gray-900 mb-1">
             Assembly service
             <br />
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="bg-yellow-400 px-3 py-1 text-blue-900 font-bold text-sm">
             IKEA
           </div>
-        </div>
+        </div> */}
 
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto px-8 py-20 relative z-10">
@@ -157,13 +157,13 @@ export default function Home() {
         </div>
 
         {/* Bottom Image Section */}
-        <div className="bg-blue-100 h-64 w-full relative">
+        {/* <div className="bg-blue-100 h-64 w-full relative">
           <img
             src="/people-working-on-furniture-assembly.jpg"
             alt="Workers assembling furniture"
             className="w-full h-full object-cover"
           />
-        </div>
+        </div> */}
 
         {/* Decorative dots */}
         <div className="absolute bottom-1/3 right-12 space-y-2">
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
 
         {/* Decorative circle */}
-        <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-yellow-400 rounded-full"></div>
+        <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-teal-600 rounded-full"></div>
       </main>
     </div>
   );
