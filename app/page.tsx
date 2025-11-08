@@ -32,18 +32,18 @@ export default function Home() {
       {/* Header */}
       <header className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
         <div className="flex items-center gap-2">
-          <div className="text-2xl font-bold text-teal-600">
-            <span className="text-teal-600">⟳</span> SabiWorks
+          <div className="text-2xl font-bold text-blue-800">
+            <span className="text-blue-800">⟳</span> SabiWorks
           </div>
         </div>
         <nav className="flex items-center gap-8">
-          <button className="text-gray-900 font-medium hover:text-teal-600">
+          <button className="text-gray-900 font-medium hover:text-blue-800">
             Services
           </button>
-          <button className="text-gray-900 font-medium hover:text-teal-600">
+          <button className="text-gray-900 font-medium hover:text-blue-800">
             Sign up / Log in
           </button>
-          <button className="px-6 py-2 border-2 border-teal-600 text-teal-600 rounded-full font-medium hover:bg-teal-50">
+          <button className="px-6 py-2 border-2 border-blue-800 text-blue-800 rounded-full font-medium hover:bg-blue-50">
             Become a Tasker
           </button>
         </nav>
@@ -52,8 +52,8 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute top-70 left-0 w-96 h-96 bg-teal-600 rounded-full  -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600 rounded-full  translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-70 left-0 w-96 h-96 bg-blue-800 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-800 rounded-full  translate-x-1/2 -translate-y-1/2"></div>
         {/* <div className="absolute bottom-0 left-1/4 w-32 h-32 border-l-8 border-purple-400 opacity-30"></div> */}
 
         {/* IKEA Logo */}
@@ -83,9 +83,9 @@ export default function Home() {
               placeholder="What do you need help with?"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 max-w-xl px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 placeholder-gray-400 focus:outline-none focus:border-teal-600"
+              className="flex-1 max-w-xl px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-600"
             />
-            <button className="px-8 py-3 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition-colors">
+            <button className="px-8 py-3 bg-blue-800 text-white rounded-full hover:bg-blue-700 transition-colors">
               <Search className="w-6 h-6" />
             </button>
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex flex-col items-center gap-2 transition-colors ${
                   activeCategory === category.id
-                    ? "text-teal-600"
+                    ? "text-blue-600"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -111,7 +111,7 @@ export default function Home() {
                 >
                   {category.icon === "🔧" ? (
                     <svg
-                      className="w-8 h-8 text-teal-600"
+                      className="w-8 h-8 text-blue-800"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -130,14 +130,14 @@ export default function Home() {
                 <span
                   className={`text-sm font-medium ${
                     activeCategory === category.id
-                      ? "text-teal-600 font-semibold"
+                      ? "text-blue-800 font-semibold"
                       : "text-gray-700"
                   }`}
                 >
                   {category.label}
                 </span>
                 {activeCategory === category.id && (
-                  <div className="h-1 w-12 bg-teal-600 rounded-full"></div>
+                  <div className="h-1 w-12 bg-blue-800 rounded-full"></div>
                 )}
               </button>
             ))}
@@ -148,7 +148,7 @@ export default function Home() {
             {assemblyTypes.map((type) => (
               <button
                 key={type}
-                className="px-6 py-2 border-2 border-gray-400 text-gray-900 rounded-full hover:border-teal-600 hover:text-teal-600 transition-colors font-medium"
+                className="px-6 py-2 border-2 border-gray-400 text-gray-900 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors font-medium"
               >
                 {type}
               </button>
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
 
         {/* Decorative circle */}
-        <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-teal-600 rounded-full"></div>
+        <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-blue-800 rounded-full"></div>
       </main>
     </div>
   );
