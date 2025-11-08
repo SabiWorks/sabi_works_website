@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Search } from "lucide-react"
+import { useState } from "react";
+import { Search } from "lucide-react";
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState("assembly")
-  const [searchQuery, setSearchQuery] = useState("")
+  const [activeCategory, setActiveCategory] = useState("assembly");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories = [
     { id: "assembly", label: "Assembly", icon: "🔧" },
@@ -16,7 +16,7 @@ export default function Home() {
     { id: "repairs", label: "Home Repairs", icon: "🔨" },
     { id: "painting", label: "Painting", icon: "🎨" },
     { id: "trending", label: "Trending", icon: "🔥" },
-  ]
+  ];
 
   const assemblyTypes = [
     "General Furniture Assembly",
@@ -25,7 +25,7 @@ export default function Home() {
     "PAX Assembly",
     "Bookshelf Assembly",
     "Desk Assembly",
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -33,12 +33,16 @@ export default function Home() {
       <header className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
         <div className="flex items-center gap-2">
           <div className="text-2xl font-bold text-teal-600">
-            <span className="text-teal-600">⟳</span> taskrabbit
+            <span className="text-teal-600">⟳</span> SabiWorks
           </div>
         </div>
         <nav className="flex items-center gap-8">
-          <button className="text-gray-900 font-medium hover:text-teal-600">Services</button>
-          <button className="text-gray-900 font-medium hover:text-teal-600">Sign up / Log in</button>
+          <button className="text-gray-900 font-medium hover:text-teal-600">
+            Services
+          </button>
+          <button className="text-gray-900 font-medium hover:text-teal-600">
+            Sign up / Log in
+          </button>
           <button className="px-6 py-2 border-2 border-teal-600 text-teal-600 rounded-full font-medium hover:bg-teal-50">
             Become a Tasker
           </button>
@@ -59,7 +63,9 @@ export default function Home() {
             <br />
             provided for
           </div>
-          <div className="bg-yellow-400 px-3 py-1 text-blue-900 font-bold text-sm">IKEA</div>
+          <div className="bg-yellow-400 px-3 py-1 text-blue-900 font-bold text-sm">
+            IKEA
+          </div>
         </div>
 
         {/* Hero Section */}
@@ -91,16 +97,25 @@ export default function Home() {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex flex-col items-center gap-2 transition-colors ${
-                  activeCategory === category.id ? "text-teal-600" : "text-gray-600 hover:text-gray-900"
+                  activeCategory === category.id
+                    ? "text-teal-600"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 <div
                   className={`w-16 h-16 flex items-center justify-center rounded-full ${
-                    activeCategory === category.id ? "bg-blue-100 text-2xl" : "text-3xl"
+                    activeCategory === category.id
+                      ? "bg-blue-100 text-2xl"
+                      : "text-3xl"
                   }`}
                 >
                   {category.icon === "🔧" ? (
-                    <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-8 h-8 text-teal-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -114,12 +129,16 @@ export default function Home() {
                 </div>
                 <span
                   className={`text-sm font-medium ${
-                    activeCategory === category.id ? "text-teal-600 font-semibold" : "text-gray-700"
+                    activeCategory === category.id
+                      ? "text-teal-600 font-semibold"
+                      : "text-gray-700"
                   }`}
                 >
                   {category.label}
                 </span>
-                {activeCategory === category.id && <div className="h-1 w-12 bg-teal-600 rounded-full"></div>}
+                {activeCategory === category.id && (
+                  <div className="h-1 w-12 bg-teal-600 rounded-full"></div>
+                )}
               </button>
             ))}
           </div>
@@ -161,5 +180,5 @@ export default function Home() {
         <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-yellow-400 rounded-full"></div>
       </main>
     </div>
-  )
+  );
 }
