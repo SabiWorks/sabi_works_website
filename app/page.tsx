@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/sections/Hero";
 import { PopularProjects } from "@/components/sections/PopularProjects";
+import { Footer } from "@/components/layout/Footer";
 import { categories, assemblyTypes } from "@/lib/constants";
 
 export default function Home() {
@@ -17,8 +18,8 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative overflow-hidden pt-20">
         {/* Decorative Elements */}
-        <div className="absolute top-70 left-0 w-96 h-96 bg-blue-800 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-800 rounded-full  translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-90 md:top-90 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-96 lg:h-96 bg-blue-800 rounded-full -translate-x-1/2 -translate-y-1/2 hover:opacity-30 transition-all duration-500"></div>
+        <div className="absolute top-30 md:top-10 right-0 w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-96 lg:h-96 bg-blue-700 rounded-full translate-x-1/2 -translate-y-1/2 hover:opacity-25 transition-all duration-700"></div>
         {/* <div className="absolute bottom-0 left-1/4 w-32 h-32 border-l-8 border-purple-400 opacity-30"></div> */}
 
         {/* IKEA Logo */}
@@ -54,19 +55,28 @@ export default function Home() {
         </div> */}
 
         {/* Decorative dots */}
-        <div className="absolute bottom-1/3 right-12 space-y-2">
+        <div className="hidden sm:block absolute bottom-1/3 right-4 sm:right-12 space-y-2">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex gap-2">
               {[...Array(3)].map((_, j) => (
-                <div key={j} className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  key={j}
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-pulse"
+                  style={{ animationDelay: `${(i * 3 + j) * 0.1}s` }}
+                ></div>
               ))}
             </div>
           ))}
         </div>
 
         {/* Decorative circle */}
-        <div className="absolute top-1/3 right-20 w-24 h-24 border-4 border-blue-800 rounded-full"></div>
+        <div
+          className="hidden md:block absolute top-1/3 right-8 lg:right-20 w-16 h-16 lg:w-24 lg:h-24 border-2 lg:border-4 border-blue-600 rounded-full opacity-30 hover:opacity-50 transition-all duration-300 animate-spin"
+          style={{ animationDuration: "20s" }}
+        ></div>
       </main>
+
+      <Footer />
     </div>
   );
 }
