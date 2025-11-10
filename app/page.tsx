@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/Hero";
 import { PopularProjects } from "@/components/sections/PopularProjects";
 import { Footer } from "@/components/layout/Footer";
 import { categories, assemblyTypes } from "@/lib/constants";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("assembly");
@@ -44,6 +45,8 @@ export default function Home() {
         />
 
         <PopularProjects />
+
+        <HowItWorks />
 
         {/* Bottom Image Section */}
         {/* <div className="bg-blue-100 h-64 w-full relative">
