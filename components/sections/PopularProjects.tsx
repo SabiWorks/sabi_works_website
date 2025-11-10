@@ -1,4 +1,5 @@
 import { Star, MapPin, Heart } from "lucide-react";
+import Link from "next/link";
 
 interface PopularProject {
   id: string;
@@ -145,9 +146,11 @@ export function PopularProjects() {
                   {project.description}
                 </p>
 
-                <button className="w-full mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
-                  View Profile
-                </button>
+                <Link href={`/profile/${project.id}`}>
+                  <button className="w-full mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
+                    View Profile
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
