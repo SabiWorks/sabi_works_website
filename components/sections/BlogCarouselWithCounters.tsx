@@ -30,12 +30,23 @@ const counters = [
 
 export function BlogCarouselWithCounters() {
   const [current, setCurrent] = useState(0);
+  const [timerWidth, setTimerWidth] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % blogs.length);
     }, 8000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    let start = Date.now();
+    const interval = setInterval(() => {
+      const elapsed = (Date.now() - start) % 4000;
+      setTimerWidth((elapsed / 4000) * 100);
+    }, 50);
+    return () => clearInterval(interval);
+  }, [current]);
 
   return (
     <section className="relative py-16 bg-white">
@@ -69,7 +80,7 @@ export function BlogCarouselWithCounters() {
             {/* Timer Bar */}
             <div
               className="absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-1000"
-              style={{ width: `${((Date.now() / 4000) % 1) * 100}%` }}
+              style={{ width: `${timerWidth}%` }}
             />
           </div>
           {/* Carousel Controls */}
