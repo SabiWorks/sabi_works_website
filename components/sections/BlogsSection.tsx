@@ -33,25 +33,25 @@ export function BlogsSection() {
           {blogs.map((blog) => (
             <div
               key={blog.title}
-              className="bg-blue-50 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+              className="bg-blue- rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="relative w-full h-56">
+              <div className="relative w-full h-56 overflow-hidden">
                 <Image
                   src={blog.image}
                   alt={blog.title}
                   fill
-                  className="object-cover"
+                  className="object-cover overflow-hidden hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
                 <p className="text-gray-700 mb-4">{blog.excerpt}</p>
-                <a
-                  href={blog.link}
-                  className="inline-block font-semibold hover:underline"
+                <button
+                  //   href={blog.link}
+                  className="inline-block hover:underline bg-blue-800 p-2 rounded-lg text-white"
                 >
                   Read More
-                </a>
+                </button>
               </div>
             </div>
           ))}

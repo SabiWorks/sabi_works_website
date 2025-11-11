@@ -35,12 +35,12 @@ export function TestimonialsSection() {
               key={t.name}
               className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
             >
-              <div className="w-20 h-20 mb-4 relative">
+              <div className="w-36 h-36 mb-4 relative">
                 <Image
                   src={t.image}
                   alt={t.name}
                   fill
-                  className="object-cover rounded-full border-4 border-blue-200"
+                  className="object-cover rounded-3xl border-blue-200 shadow-blue-400 shadow-lg"
                 />
               </div>
               <blockquote className="italic text-gray-700 mb-4">
