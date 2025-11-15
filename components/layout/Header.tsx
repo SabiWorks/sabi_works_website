@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/components/i18n/useTranslation";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +15,7 @@ import {
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, locale, setLocale } = useTranslation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
@@ -25,27 +27,53 @@ export function Header() {
               href="/"
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-800"
             >
-              <span className="text-blue-800">⟳</span> SabiWorks
+              <span className="text-blue-800">⟳</span> {t("sabi_works")}
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
             <button className="text-gray-900 font-medium hover:text-blue-800 transition-colors">
-              Services
+              {t("services")}
             </button>
             <Link
               href="/auth"
               className="text-gray-900 font-medium hover:text-blue-800 transition-colors"
             >
-              Sign up / Log in
+              {t("signup_login")}
             </Link>
             <Button
               variant="outline"
               className="border-2 border-blue-800 text-blue-800 hover:bg-blue-50 rounded-full font-medium"
             >
-              Become a Tasker
+              {t("become_tasker")}
             </Button>
+
+            {/* Locale Switcher */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setLocale("en")}
+                className={`px-2 py-1 rounded ${
+                  locale === "en"
+                    ? "bg-blue-800 text-white"
+                    : "bg-transparent text-gray-700"
+                }`}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLocale("am")}
+                className={`px-2 py-1 rounded ${
+                  locale === "am"
+                    ? "bg-blue-800 text-white"
+                    : "bg-transparent text-gray-700"
+                }`}
+                aria-label="Switch to Amharic"
+              >
+                AM
+              </button>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -71,14 +99,14 @@ export function Header() {
                       className="text-left text-lg font-medium text-gray-900 hover:text-blue-800 transition-colors py-2"
                       onClick={() => setIsOpen(false)}
                     >
-                      Services
+                      {t("services")}
                     </button>
                     <Link
                       href="/auth"
                       className="text-left text-lg font-medium text-gray-900 hover:text-blue-800 transition-colors py-2"
                       onClick={() => setIsOpen(false)}
                     >
-                      Sign up / Log in
+                      {t("signup_login")}
                     </Link>
                   </nav>
 
@@ -94,7 +122,7 @@ export function Header() {
 
                   {/* Mobile Footer */}
                   <div className="pt-4 text-center text-sm text-gray-500">
-                    Your trusted home service platform
+                    {t("trusted_platform")}
                   </div>
                 </div>
               </SheetContent>

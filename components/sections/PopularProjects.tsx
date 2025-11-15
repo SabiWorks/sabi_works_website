@@ -1,5 +1,6 @@
 import { Star, MapPin, Heart } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 interface PopularProject {
   id: string;
@@ -65,16 +66,16 @@ const popularProjects: PopularProject[] = [
 ];
 
 export function PopularProjects() {
+  const { t } = useTranslation();
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Popular Projects
+            {t("popular_projects")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover top-rated professionals in your area. Browse their
-            expertise, reviews, and get started on your next project.
+            {t("popular_projects_desc")}
           </p>
         </div>
 
@@ -131,7 +132,7 @@ export function PopularProjects() {
                     {project.rating}
                   </span>
                   <span className="text-sm text-gray-500">
-                    ({project.reviewCount} reviews)
+                    ({project.reviewCount} {t("reviews")})
                   </span>
                 </div>
 
@@ -148,7 +149,7 @@ export function PopularProjects() {
 
                 <Link href={`/profile/${project.id}`}>
                   <button className="w-full mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
-                    View Profile
+                    {t("view_profile")}
                   </button>
                 </Link>
               </div>
@@ -158,7 +159,7 @@ export function PopularProjects() {
 
         <div className="text-center mt-12">
           <button className="px-8 py-3 bg-blue-800 text-white rounded-full hover:bg-blue-900 transition-colors font-medium">
-            View All Professionals
+            {t("view_all_professionals")}
           </button>
         </div>
       </div>

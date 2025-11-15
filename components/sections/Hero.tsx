@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import { Category } from "@/types/category";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 interface HeroProps {
   activeCategory: string;
@@ -18,19 +19,20 @@ export function Hero({
   categories,
   assemblyTypes,
 }: HeroProps) {
+  const { t } = useTranslation();
   return (
     <div className="max-w-6xl mx-auto px-8 py-20 relative z-10">
       <h1 className="text-6xl font-bold text-gray-900 text-center mb-16">
-        Book trusted help
+        {t("hero_title_1")}
         <br />
-        for home tasks
+        {t("hero_title_2")}
       </h1>
 
       {/* Search Bar */}
       <div className="flex gap-2 mb-20 justify-center">
         <input
           type="text"
-          placeholder="What do you need help with?"
+          placeholder={t("hero_search_placeholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="flex-1 max-w-xl px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-600"
@@ -87,7 +89,7 @@ export function Hero({
                       : "text-gray-700"
                   }`}
                 >
-                  {category.label}
+                  {t(category.label)}
                 </span>
                 {activeCategory === category.id && (
                   <div className="h-0.5 w-8 bg-blue-800 rounded-full"></div>
@@ -141,7 +143,7 @@ export function Hero({
                     : "text-gray-700"
                 }`}
               >
-                {category.label}
+                {t(category.label)}
               </span>
               {activeCategory === category.id && (
                 <div className="h-1 w-12 bg-blue-800 rounded-full"></div>
@@ -161,7 +163,7 @@ export function Hero({
                 key={type}
                 className="px-4 py-2 border-2 border-gray-400 text-gray-900 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all duration-200 font-medium whitespace-nowrap shrink-0 hover:scale-105"
               >
-                {type}
+                {t(type)}
               </button>
             ))}
           </div>
@@ -174,7 +176,7 @@ export function Hero({
               key={type}
               className="px-6 py-2 border-2 border-gray-400 text-gray-900 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors font-medium"
             >
-              {type}
+              {t(type)}
             </button>
           ))}
         </div>
