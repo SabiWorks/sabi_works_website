@@ -33,21 +33,21 @@ export function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
             >
               <div className="w-36 h-36 mb-4 relative">
                 <Image
                   src={t.image}
                   alt={t.name}
                   fill
-                  className="object-cover rounded-3xl border-blue-200 shadow-blue-400 shadow-lg"
+                  className="object-cover rounded-3xl border-blue-200 dark:border-gray-700 shadow-blue-400 dark:shadow-gray-700 shadow-lg"
                 />
               </div>
-              <blockquote className="italic text-gray-700 mb-4">
+              <blockquote className="italic text-gray-700 dark:text-gray-300 mb-4">
                 “{t.quote}”
               </blockquote>
-              <div className="font-semibold text-blue-800">{t.name}</div>
-              <div className="text-sm text-gray-500">{t.role}</div>
+              <div className="font-semibold text-blue-800 dark:text-blue-400">{t.name}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">{t.role}</div>
             </div>
           ))}
         </div>
