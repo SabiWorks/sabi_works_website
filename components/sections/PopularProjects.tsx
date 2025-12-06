@@ -68,13 +68,13 @@ const popularProjects: PopularProject[] = [
 export function PopularProjects() {
   const { t } = useTranslation();
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-4">
             {t("popular_projects")}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400  max-w-2xl mx-auto">
             {t("popular_projects_desc")}
           </p>
         </div>
@@ -83,7 +83,7 @@ export function PopularProjects() {
           {popularProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700"
             >
               {/* Provider Image/Avatar */}
               <div className="relative overflow-hidden">
@@ -106,10 +106,10 @@ export function PopularProjects() {
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-200 mb-1">
                       {project.providerName}
                     </h3>
-                    <p className="text-sm text-blue-800 font-medium">
+                    <p className="text-sm text-blue-800 dark:text-blue-400 font-medium">
                       {project.role}
                     </p>
                   </div>
@@ -128,22 +128,22 @@ export function PopularProjects() {
                       />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-gray-900 ml-1">
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-300 ml-1">
                     {project.rating}
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 dark:text-gray-300">
                     ({project.reviewCount} {t("reviews")})
                   </span>
                 </div>
 
                 <div className="flex items-center gap-1 mb-4">
-                  <MapPin className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-600">
+                  <MapPin className="w-4 h-4 text-gray-400 dark:text-gray-300" />
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
                     {project.location}
                   </span>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                   {project.description}
                 </p>
 

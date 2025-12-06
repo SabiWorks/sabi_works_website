@@ -7,6 +7,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -16,10 +17,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-lg sm:text-xl lg:text-2xl font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent animate-spin hover:animate-pulse transition-all duration-300">
-                ⟳
-              </span>
-              <span className="text-xl font-bold">SabiWorks</span>
+              <Image src="/sabiLogo2.png" alt="SabiWorks Logo" width={120} height={120} />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Book trusted help for home tasks like furniture assembly, moving,

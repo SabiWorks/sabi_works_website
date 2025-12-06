@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 import { Category } from "@/types/category";
 import { useTranslation } from "@/components/i18n/useTranslation";
+import Image from "next/image";
 
 interface HeroProps {
   activeCategory: string;
@@ -22,7 +23,7 @@ export function Hero({
   const { t } = useTranslation();
   return (
     <div className="max-w-6xl mx-auto px-8 py-20 relative z-10">
-      <h1 className="text-6xl font-bold text-gray-900 text-center mb-16">
+      <h1 className="text-6xl font-bold text-gray-900 dark:text-gray-300 text-center mb-16">
         {t("hero_title_1")}
         <br />
         {t("hero_title_2")}
@@ -140,7 +141,7 @@ export function Hero({
                 className={`text-sm font-medium ${
                   activeCategory === category.id
                     ? "text-blue-800 font-semibold"
-                    : "text-gray-700"
+                    : "text-gray-700 dark:text-gray-300"
                 }`}
               >
                 {t(category.label)}
@@ -174,7 +175,7 @@ export function Hero({
           {assemblyTypes.map((type) => (
             <button
               key={type}
-              className="px-6 py-2 border-2 border-gray-400 text-gray-900 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors font-medium"
+              className="px-6 py-2 border-2 border-gray-400 text-gray-900 dark:text-gray-300 rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors font-medium"
             >
               {t(type)}
             </button>

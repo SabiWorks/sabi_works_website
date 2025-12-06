@@ -49,7 +49,7 @@ export function BlogCarouselWithCounters() {
   }, [current]);
 
   return (
-    <section className="relative py-16 bg-white">
+    <section className="relative py-16 bg-white dark:bg-gray-900">
       <div className="absolute -bottom-90 md:-bottom-60 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-48 lg:h-48 bg-blue-800 rounded-full -translate-x-1/2 -translate-y-1/2 hover:opacity-30 transition-all duration-500"></div>
       <div className="absolute top-30 md:-top-10 right-0 w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-48 lg:h-48 bg-blue-700 rounded-full translate-x-1/2 -translate-y-1/2 hover:opacity-25 transition-all duration-700"></div>
 
@@ -102,12 +102,12 @@ export function BlogCarouselWithCounters() {
           {counters.map((counter) => (
             <div
               key={counter.label}
-              className="bg-blue-50 rounded-lg p-6 flex flex-col items-center shadow"
+              className="bg-blue-50 dark:bg-gray-800 rounded-lg p-6 flex flex-col items-center shadow"
             >
               <span className="text-3xl md:text-4xl font-bold text-blue-700">
                 {counter.value.toLocaleString()}
               </span>
-              <span className="mt-2 text-lg text-gray-700 font-medium">
+              <span className="mt-2 text-lg text-gray-700 dark:text-gray-300 font-medium">
                 {counter.label}
               </span>
             </div>

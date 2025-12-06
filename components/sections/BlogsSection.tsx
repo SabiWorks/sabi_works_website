@@ -28,7 +28,7 @@ const blogs = [
 export function BlogsSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-3xl font-bold text-center mb-8">
           {t("latest_blogs")}
@@ -49,7 +49,7 @@ export function BlogsSection() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
-                <p className="text-gray-700 mb-4">{blog.excerpt}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">{blog.excerpt}</p>
                 <button className="inline-block hover:underline bg-blue-800 p-2 rounded-lg text-white">
                   {t("read_more")}
                 </button>

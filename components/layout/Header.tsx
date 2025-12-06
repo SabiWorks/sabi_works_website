@@ -12,33 +12,41 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { t, locale, setLocale } = useTranslation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link
               href="/"
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-800"
+              className="flex items-center text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-800"
             >
-              <span className="text-blue-800">⟳</span> {t("sabi_works")}
+              <Image
+                src="/sabiLogo1.png"
+                alt="SabiWorks Logo"
+                width={120}
+                height={120}
+              />
+              <h1>SabiWorks</h1>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-            <button className="text-gray-900 font-medium hover:text-blue-800 transition-colors">
+            <button className="text-gray-900 dark:text-gray-200 font-medium hover:text-blue-800 transition-colors">
               {t("services")}
             </button>
             <Link
               href="/auth"
-              className="text-gray-900 font-medium hover:text-blue-800 transition-colors"
+              className="text-gray-900 dark:text-gray-200 font-medium hover:text-blue-800 transition-colors"
             >
               {t("signup_login")}
             </Link>
@@ -73,6 +81,7 @@ export function Header() {
               >
                 AM
               </button>
+              <ThemeToggle />
             </div>
           </nav>
 

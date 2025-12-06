@@ -10,7 +10,7 @@ export function HowItWorks() {
         <h2 className="text-3xl font-bold text-center mb-8">
           How Roader Works
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center dark:text-gray-300 mb-12">
           Download Roader driver app from playstore, create account use your car
           and drive by yourself. Get ride and earn more money.
         </p>
@@ -24,7 +24,7 @@ export function HowItWorks() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Request a Trip</h3>
-                <p className="text-gray-600">
+                <p className="dark:text-gray-300">
                   Choose your pickup and drop-off location, and the trip type
                   that meets your needs.
                 </p>
@@ -37,7 +37,7 @@ export function HowItWorks() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Match with a Driver</h3>
-                <p className="text-gray-600">
+                <p className="dark:text-gray-300">
                   Roader will match you with the nearest available driver.
                 </p>
               </div>
@@ -49,7 +49,7 @@ export function HowItWorks() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Enjoy Your Trip</h3>
-                <p className="text-gray-600">
+                <p className="dark:text-gray-300">
                   Meet your driver with the help of our real-time GPS services
                   and enjoy your trip!
                 </p>
@@ -62,7 +62,7 @@ export function HowItWorks() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Pay and Rate</h3>
-                <p className="text-gray-600">
+                <p className="dark:text-gray-300">
                   Pay with cash or card and rate your driver.
                 </p>
               </div>

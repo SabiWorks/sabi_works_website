@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/sabiLogo1.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/sabiLogo1.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
       {
-        url: "/s.jpg",
-        type: "image/jpeg",
+        url: "/sabiLogo1.png",
+        type: "image/png",
       },
     ],
     apple: "/apple-icon.png",
