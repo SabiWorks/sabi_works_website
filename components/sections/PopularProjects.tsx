@@ -147,9 +147,9 @@ export function PopularProjects() {
                   {project.description}
                 </p>
 
-                <Link href={`/profile/${project.id}`}>
+                <Link href={`/book/furniture-assembly`}>
                   <button className="w-full mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
-                    {t("view_profile")}
+                    Book Tasker
                   </button>
                 </Link>
               </div>
