@@ -7,29 +7,38 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
+  const { t } = useTranslation();
 
   return (
-    <div className="bg-white p-4 rounded-xl space-y-6">
+    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl space-y-6 shadow-sm dark:shadow-gray-900/50">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h2>
-        <p className="text-gray-600">Sign in to your account</p>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          {t("login_title")}
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400">
+          {t("login_subtitle")}
+        </p>
       </div>
 
       <form className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-            Email Address
+          <Label
+            htmlFor="email"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
+            {t("login_email_label")}
           </Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
-              className="pl-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("login_email_placeholder")}
+              className="pl-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
@@ -38,23 +47,23 @@ export function LoginForm() {
         <div className="space-y-2">
           <Label
             htmlFor="password"
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Password
+            {t("login_password_label")}
           </Label>
           <div className="relative">
-            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="password"
               type={showPassword ? "text" : "password"}
-              placeholder="Enter your password"
-              className="pl-10 pr-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("login_password_placeholder")}
+              className="pl-10 pr-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-3 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               {showPassword ? (
                 <EyeOff className="h-4 w-4" />
@@ -69,31 +78,33 @@ export function LoginForm() {
           <label className="flex items-center space-x-2 text-sm">
             <input
               type="checkbox"
-              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500"
             />
-            <span className="text-gray-600">Remember me</span>
+            <span className="text-gray-600 dark:text-gray-400">
+              {t("login_remember_me")}
+            </span>
           </label>
           <Link
             href="/auth/forgot-password"
-            className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+            className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
           >
-            Forgot password?
+            {t("login_forgot_password")}
           </Link>
         </div>
 
         <Button
           type="submit"
-          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+          className="w-full h-11 bg-blue-800 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
         >
-          Sign In
+          {t("login_submit")}
         </Button>
       </form>
 
       <div className="relative my-6">
-        <Separator />
+        <Separator className="dark:bg-gray-700" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="bg-white px-2 text-xs text-gray-500 uppercase tracking-wide">
-            Or continue with
+          <span className="bg-white dark:bg-gray-800 px-2 text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+            {t("login_or")}
           </span>
         </div>
       </div>
@@ -101,7 +112,7 @@ export function LoginForm() {
       <div className="grid grid-cols-2 gap-3">
         <Button
           variant="outline"
-          className="h-11 border-gray-300 hover:bg-gray-50"
+          className="h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
         >
           <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
             <path
@@ -125,7 +136,7 @@ export function LoginForm() {
         </Button>
         <Button
           variant="outline"
-          className="h-11 border-gray-300 hover:bg-gray-50"
+          className="h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
         >
           <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />

@@ -7,18 +7,22 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 export function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const { t } = useTranslation();
 
   return (
-    <div className="bg-white p-4 rounded-xl space-y-6">
+    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl space-y-6 shadow-sm dark:shadow-gray-900/50">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Create Account
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          {t("register_title")}
         </h2>
-        <p className="text-gray-600">Join us and get started today</p>
+        <p className="text-gray-600 dark:text-gray-400">
+          {t("register_subtitle")}
+        </p>
       </div>
 
       <form className="space-y-4">
@@ -26,17 +30,17 @@ export function RegisterForm() {
           <div className="space-y-2">
             <Label
               htmlFor="firstName"
-              className="text-sm font-medium text-gray-700"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300"
             >
-              First Name
+              {t("register_first_name")}
             </Label>
             <div className="relative">
-              <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+              <User className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
               <Input
                 id="firstName"
                 type="text"
-                placeholder="John"
-                className="pl-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                placeholder={t("register_first_name")}
+                className="pl-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -44,15 +48,15 @@ export function RegisterForm() {
           <div className="space-y-2">
             <Label
               htmlFor="lastName"
-              className="text-sm font-medium text-gray-700"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300"
             >
-              Last Name
+              {t("register_last_name")}
             </Label>
             <Input
               id="lastName"
               type="text"
-              placeholder="Doe"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("register_last_name")}
+              className="h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
@@ -61,33 +65,36 @@ export function RegisterForm() {
         <div className="space-y-2">
           <Label
             htmlFor="registerEmail"
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Email Address
+            {t("register_email_label")}
           </Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="registerEmail"
               type="email"
-              placeholder="john@example.com"
-              className="pl-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("register_email_placeholder")}
+              className="pl-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
-            Phone Number
+          <Label
+            htmlFor="phone"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
+            {t("register_phone_label")}
           </Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="phone"
               type="tel"
-              placeholder="+1 (555) 123-4567"
-              className="pl-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("register_phone_placeholder")}
+              className="pl-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
@@ -96,23 +103,23 @@ export function RegisterForm() {
         <div className="space-y-2">
           <Label
             htmlFor="registerPassword"
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Password
+            {t("register_password_label")}
           </Label>
           <div className="relative">
-            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="registerPassword"
               type={showPassword ? "text" : "password"}
-              placeholder="Create a strong password"
-              className="pl-10 pr-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("register_password_placeholder")}
+              className="pl-10 pr-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-3 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               {showPassword ? (
                 <EyeOff className="h-4 w-4" />
@@ -126,23 +133,23 @@ export function RegisterForm() {
         <div className="space-y-2">
           <Label
             htmlFor="confirmPassword"
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Confirm Password
+            {t("register_confirm_password_label")}
           </Label>
           <div className="relative">
-            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
             <Input
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
-              placeholder="Confirm your password"
-              className="pl-10 pr-10 h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder={t("register_confirm_password_placeholder")}
+              className="pl-10 pr-10 h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
               required
             />
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-3 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               {showConfirmPassword ? (
                 <EyeOff className="h-4 w-4" />
@@ -157,43 +164,43 @@ export function RegisterForm() {
           <input
             type="checkbox"
             id="terms"
-            className="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="mt-1 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500"
             required
           />
           <label
             htmlFor="terms"
-            className="text-sm text-gray-600 leading-relaxed"
+            className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
           >
-            I agree to the{" "}
+            {t("register_terms_prefix")}{" "}
             <Link
               href="/terms"
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
-              Terms of Service
+              {t("register_terms_link")}
             </Link>{" "}
-            and{" "}
+            {t("register_terms_and")}{" "}
             <Link
               href="/privacy"
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
-              Privacy Policy
+              {t("register_privacy_link")}
             </Link>
           </label>
         </div>
 
         <Button
           type="submit"
-          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+          className="w-full h-11 bg-blue-800 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
         >
-          Create Account
+          {t("register_submit")}
         </Button>
       </form>
 
       <div className="relative my-6">
-        <Separator />
+        <Separator className="dark:bg-gray-700" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="bg-white px-2 text-xs text-gray-500 uppercase tracking-wide">
-            Or sign up with
+          <span className="bg-white dark:bg-gray-800 px-2 text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+            {t("register_or")}
           </span>
         </div>
       </div>
@@ -201,7 +208,7 @@ export function RegisterForm() {
       <div className="grid grid-cols-2 gap-3">
         <Button
           variant="outline"
-          className="h-11 border-gray-300 hover:bg-gray-50"
+          className="h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
         >
           <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
             <path
@@ -225,7 +232,7 @@ export function RegisterForm() {
         </Button>
         <Button
           variant="outline"
-          className="h-11 border-gray-300 hover:bg-gray-50"
+          className="h-11 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
         >
           <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />

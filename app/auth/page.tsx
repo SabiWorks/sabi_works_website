@@ -4,8 +4,11 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { RegisterForm } from "@/components/auth/RegisterForm";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 export default function AuthPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Image */}
@@ -27,18 +30,17 @@ export default function AuthPage() {
               SabiWorks
             </Link>
             <h1 className="text-4xl font-bold mb-4">
-              Your Trusted Home Service Platform
+              {t("auth_hero_title")}
             </h1>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Connect with verified professionals for all your home service
-              needs. From furniture assembly to cleaning, we've got you covered.
+              {t("auth_hero_desc")}
             </p>
           </div>
         </div>
       </div>
 
       {/* Right Side - Forms */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-900">
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
@@ -51,8 +53,8 @@ export default function AuthPage() {
               </span>{" "}
               SabiWorks
             </Link>
-            <p className="text-gray-600 mt-2">
-              Your trusted home service platform
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
+              {t("auth_mobile_subtitle")}
             </p>
           </div>
 
@@ -60,10 +62,10 @@ export default function AuthPage() {
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="login" className="text-sm font-medium">
-                Sign In
+                {t("auth_sign_in_tab")}
               </TabsTrigger>
               <TabsTrigger value="register" className="text-sm font-medium">
-                Sign Up
+                {t("auth_sign_up_tab")}
               </TabsTrigger>
             </TabsList>
 
@@ -80,9 +82,9 @@ export default function AuthPage() {
           <div className="text-center mt-8">
             <Link
               href="/"
-              className="text-sm text-gray-600 hover:text-blue-600 font-medium transition-colors"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
             >
-              ← Back to Home
+              {t("auth_back_home")}
             </Link>
           </div>
         </div>
