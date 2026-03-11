@@ -1,6 +1,29 @@
+"use client";
 import Image from "next/image";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 export function HowItWorks() {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      key: "request_trip",
+      descKey: "request_trip_desc",
+    },
+    {
+      key: "match_driver",
+      descKey: "match_driver_desc",
+    },
+    {
+      key: "enjoy_trip",
+      descKey: "enjoy_trip_desc",
+    },
+    {
+      key: "pay_and_rate",
+      descKey: "pay_and_rate_desc",
+    },
+  ];
+
   return (
     <section className="relative py-16">
       <div className="absolute top-90 md:top-90 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-48 lg:h-48 bg-blue-800 rounded-full -translate-x-1/2 -translate-y-1/2 hover:opacity-30 transition-all duration-500"></div>
@@ -8,65 +31,28 @@ export function HowItWorks() {
 
       <div className="container mx-auto px-4 max-w-7xl ">
         <h2 className="text-3xl font-bold text-center mb-8">
-          How Roader Works
+          {t("how_it_works")}
         </h2>
         <p className="text-center dark:text-gray-300 mb-12">
-          Download Roader driver app from playstore, create account use your car
-          and drive by yourself. Get ride and earn more money.
+          {t("how_it_works_desc")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Steps */}
           <div className="space-y-8">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
-                <span className="text-blue-600 text-xl font-bold">1</span>
+            {steps.map((step, index) => (
+              <div key={step.key} className="flex items-start space-x-4">
+                <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full shrink-0">
+                  <span className="text-blue-600 text-xl font-bold">
+                    {index + 1}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">{t(step.key)}</h3>
+                  <p className="dark:text-gray-300">{t(step.descKey)}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold">Request a Trip</h3>
-                <p className="dark:text-gray-300">
-                  Choose your pickup and drop-off location, and the trip type
-                  that meets your needs.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
-                <span className="text-blue-600 text-xl font-bold">2</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Match with a Driver</h3>
-                <p className="dark:text-gray-300">
-                  Roader will match you with the nearest available driver.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
-                <span className="text-blue-600 text-xl font-bold">3</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Enjoy Your Trip</h3>
-                <p className="dark:text-gray-300">
-                  Meet your driver with the help of our real-time GPS services
-                  and enjoy your trip!
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
-                <span className="text-blue-600 text-xl font-bold">4</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Pay and Rate</h3>
-                <p className="dark:text-gray-300">
-                  Pay with cash or card and rate your driver.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Image */}
@@ -74,7 +60,7 @@ export function HowItWorks() {
             <div className="relative w-[800px] h-96 md:w-[800px] md:h-120">
               <Image
                 src="/images/15.jpg"
-                alt="Roader App Screenshot"
+                alt="SabiWorks App Screenshot"
                 layout="fill"
                 objectFit="contain"
               />

@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   Facebook,
@@ -8,8 +9,11 @@ import {
   MapPin,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "@/components/i18n/useTranslation";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="">
       <div className="max-w-6xl mx-auto px-8 py-12">
@@ -20,9 +24,7 @@ export function Footer() {
               <Image src="/sabiLogo2.png" alt="SabiWorks Logo" width={120} height={120} />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Book trusted help for home tasks like furniture assembly, moving,
-              cleaning, and more. Connecting you with verified professionals in
-              your area.
+              {t("footer_tagline")}
             </p>
             <div className="flex space-x-4">
               <a
@@ -48,14 +50,14 @@ export function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Services</h3>
+            <h3 className="text-lg font-semibold">{t("footer_services")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Furniture Assembly
+                  {t("footer_furniture_assembly")}
                 </Link>
               </li>
               <li>
@@ -63,7 +65,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Moving & Mounting
+                  {t("footer_moving_mounting")}
                 </Link>
               </li>
               <li>
@@ -71,7 +73,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Home Cleaning
+                  {t("footer_home_cleaning")}
                 </Link>
               </li>
               <li>
@@ -79,7 +81,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Outdoor Help
+                  {t("footer_outdoor_help")}
                 </Link>
               </li>
               <li>
@@ -87,7 +89,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  All Services
+                  {t("footer_all_services")}
                 </Link>
               </li>
             </ul>
@@ -95,14 +97,14 @@ export function Footer() {
 
           {/* Company */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Company</h3>
+            <h3 className="text-lg font-semibold">{t("footer_company")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  About Us
+                  {t("footer_about_us")}
                 </Link>
               </li>
               <li>
@@ -110,7 +112,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  How It Works
+                  {t("footer_how_it_works")}
                 </Link>
               </li>
               <li>
@@ -118,7 +120,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Become a Tasker
+                  {t("footer_become_tasker")}
                 </Link>
               </li>
               <li>
@@ -126,7 +128,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Safety & Trust
+                  {t("footer_safety_trust")}
                 </Link>
               </li>
               <li>
@@ -134,7 +136,7 @@ export function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  Support
+                  {t("footer_support")}
                 </Link>
               </li>
             </ul>
@@ -142,7 +144,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <h3 className="text-lg font-semibold">{t("footer_contact")}</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4" />
@@ -162,26 +164,26 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 SabiWorks. All rights reserved.
+            {t("footer_copyright")}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm">
             <Link
               href="#"
               className="text-gray-400 hover:text-blue-400 transition-colors"
             >
-              Privacy Policy
+              {t("footer_privacy")}
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-blue-400 transition-colors"
             >
-              Terms of Service
+              {t("footer_terms")}
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-blue-400 transition-colors"
             >
-              Cookie Policy
+              {t("footer_cookies")}
             </Link>
           </div>
         </div>

@@ -93,11 +93,10 @@ export function PopularProjects() {
                 />
                 <button className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors">
                   <Heart
-                    className={`w-5 h-5 ${
-                      project.isFavorite
+                    className={`w-5 h-5 ${project.isFavorite
                         ? "text-red-500 fill-red-500"
                         : "text-gray-400"
-                    }`}
+                      }`}
                   />
                 </button>
               </div>
@@ -120,11 +119,10 @@ export function PopularProjects() {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${
-                          i < Math.floor(project.rating)
+                        className={`w-4 h-4 ${i < Math.floor(project.rating)
                             ? "text-yellow-400 fill-yellow-400"
                             : "text-gray-300"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -149,7 +147,7 @@ export function PopularProjects() {
 
                 <Link href={`/book/furniture-assembly`}>
                   <button className="w-full mt-4 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
-                    Book Tasker
+                    {t("book_tasker")}
                   </button>
                 </Link>
               </div>

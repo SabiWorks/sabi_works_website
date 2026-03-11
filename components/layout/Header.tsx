@@ -61,22 +61,20 @@ export function Header() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setLocale("en")}
-                className={`px-2 py-1 rounded ${
-                  locale === "en"
+                className={`px-2 py-1 rounded ${locale === "en"
                     ? "bg-blue-800 text-white"
                     : "bg-transparent text-gray-700"
-                }`}
+                  }`}
                 aria-label="Switch to English"
               >
                 EN
               </button>
               <button
                 onClick={() => setLocale("am")}
-                className={`px-2 py-1 rounded ${
-                  locale === "am"
+                className={`px-2 py-1 rounded ${locale === "am"
                     ? "bg-blue-800 text-white"
                     : "bg-transparent text-gray-700"
-                }`}
+                  }`}
                 aria-label="Switch to Amharic"
               >
                 AM
@@ -125,7 +123,7 @@ export function Header() {
                       className="w-full bg-blue-800 hover:bg-blue-900 text-white rounded-full font-medium py-3"
                       onClick={() => setIsOpen(false)}
                     >
-                      Become a Tasker
+                      {t("become_tasker")}
                     </Button>
                   </div>
 
